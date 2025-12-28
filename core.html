@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="visual.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game?</title>
+</head>
+<body>
+    <div class="container">
+        
+    <div id="WinLoc" class="area area-up"></div>
+    <div id="deadLoc" class="area area-down"></div>
+
+        <img src="images\StartButton.png" class="ButtonIcon" id="startBtn"/>
+        <div id="loc11" class="hidden">
+            <img src="images/location1-1.png" id="loc11" class="loc"/>
+        </div>
+        <div id="locWin" class="hidden">
+            <img src="images/locationWin.png" id="Winloc" class="loc"/>
+        </div>
+        <div id="locdead" class="hidden">
+            <img src="images/locationDead.png" id="deadLoc" class="loc"/>
+        </div>
+        <script>
+            const startBtn = document.getElementById('startBtn');
+            const loc11 = document.getElementById('loc11');
+            const deadLoc = document.getElementById('deadLoc');
+            const WinLoc = document.getElementById('WinLoc');
+
+            startBtn.addEventListener('click', () => {
+                startBtn.style.display = "none"; //Скрыть кнопку
+                loc11.style.display = "block"; //Показать новую локацию
+                document.querySelectorAll('.area')
+                    .forEach(a => a.style.pointerEvents = 'auto');
+            });
+
+            deadLoc.addEventListener('click', () => {
+                deadLoc.style.display = "none"; //Скрыть кнопку
+                loc11.style.display = "none"; //Скрыть кнопку
+                WinLoc.style.display = "none"; //Скрыть кнопку
+                locdead.style.display = "block"; //Показать новую локацию
+                document.querySelectorAll('.area')
+                    .forEach(a => a.style.pointerEvents = 'auto');
+            });
+            WinLoc.addEventListener('click', () => {
+                deadLoc.style.display = "none"; //Скрыть кнопку
+                WinLoc.style.display = "none"; //Скрыть кнопку 
+                loc11.style.display = "none"; //Скрыть кнопку
+                locWin.style.display = "block"; //Показать новую локацию
+                document.querySelectorAll('.area')
+                    .forEach(a => a.style.pointerEvents = 'auto');
+            });
+
+        </script>
+    </div>
+</body>
+</html>

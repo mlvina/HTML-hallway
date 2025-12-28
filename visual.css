@@ -1,0 +1,69 @@
+.ButtonIcon {
+    height: auto;
+    width: 220px;
+    cursor: pointer;
+    z-index: 100;
+    position: relative;
+}
+.ButtonIcon:hover{
+    filter: drop-shadow(0 0 3px white);
+}
+#arrow:hover{
+    filter: drop-shadow(0 0 3px white);
+}
+html, body{
+    background-color: rgb(58, 58, 80);
+    overflow: hidden;
+    height: 100%;
+}
+.container {
+    display: grid;
+    place-items: center; /* горизонталь + вертикаль */
+    height: 100vh;
+}
+.hidden {
+    display: none;
+}
+.loc{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+}
+
+/* hover-зоны */
+.area {
+    pointer-events: none;
+    position: fixed;
+    width: 25vw;
+    height: 90vh;
+    z-index: 9999;   /* ПОВЕРХ ВСЕГО */
+}
+
+/* верх / низ */
+.area-up { margin-bottom: 200px; margin-left: 300px; }
+.area-down {margin-bottom: 200px; margin-right: 250px; }
+
+/* стрелка (скрыта по умолчанию) */
+.area::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/arrow.png") center no-repeat;
+    background-size: 80px 80px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+/* показать при наведении */
+.area:hover::after {
+    opacity: 1;
+}
+
+/* переворот нижней */
+.area-down::after {
+    transform: rotate(180deg);
+}
