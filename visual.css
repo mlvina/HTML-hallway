@@ -41,7 +41,14 @@ html, body{
     height: 90vh;
     z-index: 9999;   /* ПОВЕРХ ВСЕГО */
 }
-
+#WinLoc:hover{
+    filter: drop-shadow(0 0 3px white);
+	cursor: pointer;
+}
+#deadLoc:hover{
+    filter: drop-shadow(0 0 3px white);
+	cursor: pointer;
+}
 /* верх / низ */
 .area-up { margin-bottom: 200px; margin-left: 300px; }
 .area-down {margin-bottom: 200px; margin-right: 250px; }
