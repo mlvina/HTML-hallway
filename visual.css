@@ -37,7 +37,7 @@ html, body{
 .area {
     pointer-events: none;
     position: fixed;
-    width: 25vw;
+    width: 15vw;
     height: 90vh;
     z-index: 9999;   /* ПОВЕРХ ВСЕГО */
 }
